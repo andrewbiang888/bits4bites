@@ -12,7 +12,7 @@ projects:
   - name: Another Project
     link: https://pirtle.xyz/
     image: https://placebear.com/400/600
-    description: A really dope project that shows how skillfully I can craft beautiful webn creations.
+    description: A really dope project that shows how skillfully I can craft beautiful web creations.
     tech:
       - magic
       - sweat
