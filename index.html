@@ -1,0 +1,31 @@
+<!doctype html>
+  <head>
+
+    <title>&lt;Bits4Bites&gt;</title>
+
+
+  </head>
+  <body>
+
+    <script>
+    var url = 'https://cdn.rawgit.com/andrewbiang888/bits4bites/bf3cce09/projects/projects.json';
+
+    var req = new XMLHttpRequest();
+    req.open('GET', url, true);
+    req.onreadystatechange = function() {
+        if (req.readyState === XMLHttpRequest.DONE && req.status === 200) {
+          var projects = JSON.parse(req.responseText);
+          init(projects);
+        }
+      };
+    req.send();
+
+      function init(projects) {
+        // put all the logic that uses the projects data in here!
+
+        console.log(projects);
+      }
+    </script>
+
+  </body>
+</html>
