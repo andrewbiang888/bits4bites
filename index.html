@@ -1,31 +1,84 @@
 <!doctype html>
-  <head>
 
-    <title>&lt;Bits4Bites&gt;</title>
+<head>
 
+  <title>&lt;Bits4Bites&gt;</title>
 
-  </head>
-  <body>
+  <link rel='stylesheet' href='/style.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
 
-    <script>
-    var url = 'https://cdn.rawgit.com/andrewbiang888/bits4bites/bf3cce09/projects/projects.json';
+  <script src="https://unpkg.com/jquery@3.1.1/dist/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+  <script src="https://unpkg.com/vue"></script>
+</head>
 
+<body>
+  <div class='container'>
+    <h1>Past Projects</h1>
+    <div id='projects' class='row'>
+      <div class='project col s12 m6 l4' v-for='project in projects'>
+        <a v-bind:href='project.link'>
+          <h2 class='project-name'>{{ project.name }}</h2>
+          <img class='project-image' v-bind:src='project.image' />
+        </a>
+        <p>
+          {{ project.description }}
+        </p>
+        <ul class='tech-tags'>
+          <li v-for='item in project.tech'>{{ item }}</li>
+        </ul>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // var url = 'https://cdn.rawgit.com/andrewbiang888/bits4bites/bf3cce09/projects/projects.json';
+    var url = '/projects/projects.json';
     var req = new XMLHttpRequest();
     req.open('GET', url, true);
     req.onreadystatechange = function() {
-        if (req.readyState === XMLHttpRequest.DONE && req.status === 200) {
-          var projects = JSON.parse(req.responseText);
-          init(projects);
-        }
-      };
+      if (req.readyState === XMLHttpRequest.DONE && req.status === 200) {
+        var projects = JSON.parse(req.responseText);
+        init(shuffle(projects));
+      }
+    };
     req.send();
 
-      function init(projects) {
-        // put all the logic that uses the projects data in here!
+    function init(projects) {
+      // put all the logic that uses the projects data in here!
 
-        console.log(projects);
+      console.log(projects);
+
+      var app = new Vue({
+        el: '#projects',
+        data: {
+          projects
+        }
+      });
+    }
+
+    // randomize array, from http://stackoverflow.com/a/2450976
+    function shuffle(array) {
+      var currentIndex = array.length,
+        temporaryValue, randomIndex;
+
+      // While there remain elements to shuffle...
+      while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
       }
-    </script>
+      return array;
+    }
+  </script>
 
-  </body>
+</body>
+
 </html>
