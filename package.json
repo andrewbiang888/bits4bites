@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node projects/build-json.js"
+    "build": "node projects/build-json.js && git add projects/projects.json"
   },
   "repository": {
     "type": "git",
