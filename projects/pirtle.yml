@@ -9,6 +9,19 @@ projects:
       - SEO
       - Google Maps API
 
+  - name: Laniakean Explorer
+    link: https://laniakean.com/
+    image: /projects/images/laniakean-explorer.png
+    description: A pet project that explores the Milky Way's galactic supercluster, Laniakea. Currently undergoing a complete rebuild of the back and frontends.
+    tech:
+      - AngularJS
+      - Three.js
+      - Bootstrap
+      - MathJax
+      - PHP API
+      - SQL database management
+      - Data management in Python
+
   - name: Another Project
     link: https://pirtle.xyz/
     image: https://placebear.com/400/600
