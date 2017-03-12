@@ -3,6 +3,7 @@ projects:
     link: https://b-side-merchandise.herokuapp.com/
     image: /projects/images/b-side-merch.png
     description: A merchandise store featuring products by B-Side Book Club A Cappella based in Portland, Oregon.
+    tech: 
       - PayPal integration
       - Email Injection Form Security
       - PHP Mailer
