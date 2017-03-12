@@ -1,0 +1,29 @@
+{
+  "name": "bits4bites",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node projects/build-json.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewbiang888/bits4bites.git"
+  },
+  "author": "",
+  "license": "Unlicenced",
+  "bugs": {
+    "url": "https://github.com/andrewbiang888/bits4bites/issues"
+  },
+  "homepage": "https://github.com/andrewbiang888/bits4bites#readme",
+  "pre-commit": [
+    "build"
+  ],
+  "dependencies": {
+    "yamljs": "^0.2.8"
+  },
+  "devDependencies": {
+    "pre-commit": "^1.2.2"
+  }
+}
