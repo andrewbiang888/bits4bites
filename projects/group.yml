@@ -1,0 +1,9 @@
+projects:
+  - name: B-side Book Club A Capella
+    link: http://bsidebookclub.herokuapp.com/
+    image: /projects/images/bside-book-club.png
+    description: Webpage for a local Portland a cappella group, B-side Book Club, featuring custom-built music player.
+    tech:
+      - Material Design
+      - TweenMax Animations
+      - Music player
