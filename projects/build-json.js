@@ -6,6 +6,7 @@ const chalk = require('chalk');
 console.log(chalk.magenta('compiling projects.json...'))
 
 const files = [
+  'group.yml',
   'pirtle.yml',
   'sam.yml',
 ];
