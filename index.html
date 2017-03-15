@@ -4,9 +4,9 @@
 
     <title>&lt;Bits4Bites&gt;</title>
 
-    <link rel='stylesheet' href='/style.css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+    <link rel='stylesheet' href='/style.css'>
     <script src="https://unpkg.com/jquery@3.1.1/dist/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
     <script src="https://unpkg.com/vue"></script>
@@ -36,29 +36,29 @@
                     </ul>
                 </div>
             </nav>
-
-            <div class="carousel carousel-slider center" data-indicators="true">
-                <div class="carousel-fixed-item center">
-                    <a class="btn waves-effect white grey-text darken-text-2">button</a>
-                </div>
-                <div class="carousel-item red white-text" href="#one!">
-                    <h2 style='color: #bad; font-size: 72px; font-weight: 800'>Big Bear</h2>
-                    <p class="white-text">This is your first panel, woo!</p>
-                </div>
-                <div class="carousel-item amber white-text" href="#two!">
-                    <h2>Second Panel</h2>
-                    <p class="white-text">This is your second panel</p>
-                </div>
-                <div class="carousel-item green white-text" href="#three!">
-                    <h2>Third Panel</h2>
-                    <p class="white-text">This is your third panel</p>
-                </div>
-                <div class="carousel-item blue white-text" href="#four!">
-                    <h2>Fourth Panel</h2>
-                    <p class="white-text">This is your fourth panel</p>
-                </div>
-            </div>
         </header>
+
+        <div class="carousel carousel-slider center" data-indicators="true">
+            <div class="carousel-fixed-item center">
+                <a class="btn waves-effect white grey-text darken-text-2">button</a>
+            </div>
+            <div class="carousel-item red white-text" href="#one!">
+                <h2 style='color: #bad; font-size: 72px; font-weight: 800'>Big Bear</h2>
+                <p class="white-text">This is your first panel, woo!</p>
+            </div>
+            <div class="carousel-item amber white-text" href="#two!">
+                <h2>Second Panel</h2>
+                <p class="white-text">This is your second panel</p>
+            </div>
+            <div class="carousel-item green white-text" href="#three!">
+                <h2>Third Panel</h2>
+                <p class="white-text">This is your third panel</p>
+            </div>
+            <div class="carousel-item blue white-text" href="#four!">
+                <h2>Fourth Panel</h2>
+                <p class="white-text">This is your fourth panel</p>
+            </div>
+        </div>
 
         <div id="ourChefs" class="fullWidth center is-medium">
             <h1>Our Chefs</h1>
@@ -149,55 +149,55 @@
               };
           </script>
 
-                <script>
-                    // var url = 'https://cdn.rawgit.com/andrewbiang888/bits4bites/bf3cce09/projects/projects.json';
-                    var url = '/projects/projects.json';
-                var req = new XMLHttpRequest();
-                req.open('GET', url, true);
-                req.onreadystatechange = function() {
-                    if (req.readyState === XMLHttpRequest.DONE && req.status === 200) {
-                        var projects = JSON.parse(req.responseText);
-                        init(shuffle(projects));
-                    }
-                };
-                req.send();
+          <script>
+              // var url = 'https://cdn.rawgit.com/andrewbiang888/bits4bites/bf3cce09/projects/projects.json';
+              var url = '/projects/projects.json';
+          var req = new XMLHttpRequest();
+          req.open('GET', url, true);
+          req.onreadystatechange = function() {
+              if (req.readyState === XMLHttpRequest.DONE && req.status === 200) {
+                  var projects = JSON.parse(req.responseText);
+                  init(shuffle(projects));
+              }
+          };
+          req.send();
 
-                function init(projects) {
-                    // put all the logic that uses the projects data in here!
+          function init(projects) {
+              // put all the logic that uses the projects data in here!
 
-                    var app = new Vue({
-                                el: '#projects',
-                                data: {
-                                    projects
-
-
-                                }
-                              });
-
-                                // randomize array, from http://stackoverflow.com/a/2450976
-                                function shuffle(array) {
-                                    var currentIndex = array.length,
-                                        temporaryValue, randomIndex;
-
-                                    // While there remain elements to shuffle...
-                                    while (0 !== currentIndex) {
-
-                                        // Pick a remaining element...
-                                        randomIndex = Math.floor(Math.random() * currentIndex);
-                                        currentIndex -= 1;
-
-                                        // And swap it with the current element.
-                                        temporaryValue = array[currentIndex];
-                                        array[currentIndex] = array[randomIndex];
-                                        array[randomIndex] = temporaryValue;
-                                    }
-                                    return array;
-                                };
-                              };
-        </script>
+              var app = new Vue({
+                          el: '#projects',
+                          data: {
+                              projects
 
 
-        <script src="script.js"></script>
+                          }
+                        });
+
+                          // randomize array, from http://stackoverflow.com/a/2450976
+                          function shuffle(array) {
+                              var currentIndex = array.length,
+                                  temporaryValue, randomIndex;
+
+                              // While there remain elements to shuffle...
+                              while (0 !== currentIndex) {
+
+                                  // Pick a remaining element...
+                                  randomIndex = Math.floor(Math.random() * currentIndex);
+                                  currentIndex -= 1;
+
+                                  // And swap it with the current element.
+                                  temporaryValue = array[currentIndex];
+                                  array[currentIndex] = array[randomIndex];
+                                  array[randomIndex] = temporaryValue;
+                              }
+                              return array;
+                          };
+                        };
+                      </script>
+
+
+        <script src="/script.js"></script>
 </body>
 
 </html>
