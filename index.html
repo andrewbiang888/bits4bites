@@ -96,7 +96,8 @@
             </div>
         </footer>
 
-    </div>
+    
+
 
 
     <div class='container'>
@@ -142,6 +143,31 @@
                     projects
                 }
             });
+
+  </div>
+
+  <script>
+    // var url = 'https://cdn.rawgit.com/andrewbiang888/bits4bites/bf3cce09/projects/projects.json';
+    var url = '/projects/projects.json';
+    var req = new XMLHttpRequest();
+    req.open('GET', url, true);
+    req.onreadystatechange = function() {
+      if (req.readyState === XMLHttpRequest.DONE && req.status === 200) {
+        var projects = JSON.parse(req.responseText);
+        init(shuffle(projects));
+      }
+    };
+    req.send();
+
+    function init(projects) {
+      // put all the logic that uses the projects data in here!
+
+      var app = new Vue({
+        el: '#projects',
+        data: {
+          projects
+
+          
         }
 
         // randomize array, from http://stackoverflow.com/a/2450976
