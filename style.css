@@ -20,3 +20,27 @@
   padding: 1px;
   border-radius: 6px;
 }
+
+h1,h2,h3,h4,h5,p {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 300;
+  color: black;
+}
+
+nav, footer {
+  background-color: white !important;
+  }
+
+nav h1, nav p {
+  line-height: auto;
+  margin-left: 5%;
+}
+#nde {
+  margin-bottom: 0;
+}
+
+/* CAROUSEL  */
+.red {
+  background: url(//placebear.com/500/300) center no-repeat;
+  background-size: cover;
+}
