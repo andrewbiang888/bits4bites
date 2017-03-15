@@ -22,10 +22,22 @@ var bits4bites = new Vue({
   }
 });
 
-$(".button-collapse").sideNav();
+// $(".button-collapse").sideNav();
+//
+//     $(document).ready(function(){
+//       console.log('setting caro!')
+//       $('.carousel.carousel-slider').carousel({full_width: true});
+//       $('.carousel.carousel-slider').height('300px')
+//     });
 
-    $(document).ready(function(){
-      console.log('setting caro!')
-      $('.carousel.carousel-slider').carousel({full_width: true});
-      $('.carousel.carousel-slider').height('300px')
-    });
+$(document).ready(function() {
+  $('.carousel.carousel-slider').carousel({
+    full_width: true
+  });
+  $(".button-collapse").sideNav({
+    menuWidth: 75 + '%', // Default is 300
+    edge: 'left', // Choose the horizontal origin
+    closeOnClick: true, // Closes side-nav on &lt;a> clicks, useful for Angular/Meteor
+    draggable: true // Choose whether you can drag to open on touch screens
+  });
+});
