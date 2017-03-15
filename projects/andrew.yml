@@ -1,0 +1,44 @@
+projects:
+  - name: Macro Conscious LLC
+    link: https://macroconscious.com/
+    image: /projects/images/macroconscious.png
+    description: A digital design agency that specializes in mobile website development.
+    tech:
+      - Customized WordPress
+      - Logo Design
+      - SEO
+      - Google Maps API
+      - Cache Tools
+      - Bootstrap
+
+  - name: Carolin Chu
+    link: http://www.carolinechu.com/
+    image: /projects/images/carolinechu.png
+    description: I worked on redesigning and improving loading speeds on this Ecommerce store.
+    tech:
+      - Customized WordPress
+      - WooCommerce Integration
+      - Bootstrap
+      - UX Consulting
+      - Hosting
+
+  - name: Phillip Jo
+    link: http://www.phillipjo.com/
+    image: /projects/images/phillipjo.png
+    description: I got to help create this cool portfolio piece for Phillip Jo. This dude is going places.
+    tech:
+      - Custom WordPress
+      - Modernizr.js
+      - UX Consulting
+      - Hosting
+
+  - name: B-Side Book Club
+    link: http://bsidebookclub.com/
+    image: /projects/images/bsidebookclub.png
+    description: B-Side Book Club is an awesome A Cappella group that .
+    tech:
+      - Custom Design
+      - Mobile-First
+      - UX Design
+      - Hosting
+      - Custom Music Player
