@@ -60,17 +60,37 @@
             </div>
         </header>
 
-        <div>
+        <div id="ourChefs" class="fullWidth center is-medium">
             <h1>Our Chefs</h1>
         </div>
 
-        <div v-for="person in persons">
+        <div v-for="person in persons" class="fullWidth-body">
             <h2>{{person.name}}</h2>
             <p>{{person.description}}</p>
         </div>
 
-        <div>
-            <h1>Our Projects</h1>
+        <div id="ourProjects" class="fullWidth center is-medium">
+            <div class="fullWidth-body">
+                <h1>Our Projects</h1>
+            </div>
+        </div>
+        <div class='container'>
+            <h1>Past Projects</h1>
+            <div id='projects' class='row'>
+                <div class='project col s12 m6 l4' v-for='project in projects'>
+                    <a v-bind:href='project.link'>
+                        <h2 class='project-name'>{{ project.name }}</h2>
+                        <img class='project-image' v-bind:src='project.image' />
+                    </a>
+                    <p>
+                        {{ project.description }}
+                    </p>
+                    <ul class='tech-tags'>
+                        <li v-for='item in project.tech'>{{ item }}</li>
+                    </ul>
+                    </a>
+                </div>
+            </div>
         </div>
 
         <footer class="page-footer">
@@ -102,103 +122,82 @@
             </div>
         </footer>
 
-    
-
-
-
-    <div class='container'>
-        <h1>Past Projects</h1>
-        <div id='projects' class='row'>
-            <div class='project col s12 m6 l4' v-for='project in projects'>
-                <a v-bind:href='project.link'>
-                    <h2 class='project-name'>{{ project.name }}</h2>
-                    <img class='project-image' v-bind:src='project.image' />
-                </a>
-                <p>
-                    {{ project.description }}
-                </p>
-                <ul class='tech-tags'>
-                    <li v-for='item in project.tech'>{{ item }}</li>
-                </ul>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // var url = 'https://cdn.rawgit.com/andrewbiang888/bits4bites/bf3cce09/projects/projects.json';
-        var url = '/projects/projects.json';
-        var req = new XMLHttpRequest();
-        req.open('GET', url, true);
-        req.onreadystatechange = function() {
-            if (req.readyState === XMLHttpRequest.DONE && req.status === 200) {
-                var projects = JSON.parse(req.responseText);
-                init(shuffle(projects));
-            }
-        };
-        req.send();
-
-        function init(projects) {
-            // put all the logic that uses the projects data in here!
-
-            console.log(projects);
-
-            var app = new Vue({
-                el: '#projects',
-                data: {
-                    projects
+        <script>
+            // var url = 'https://cdn.rawgit.com/andrewbiang888/bits4bites/bf3cce09/projects/projects.json';
+            var url = '/projects/projects.json';
+            var req = new XMLHttpRequest();
+            req.open('GET', url, true);
+            req.onreadystatechange = function() {
+                if (req.readyState === XMLHttpRequest.DONE && req.status === 200) {
+                    var projects = JSON.parse(req.responseText);
+                    init(shuffle(projects));
                 }
-            });
+            };
+            req.send();
 
-  </div>
+            function init(projects) {
+                // put all the logic that uses the projects data in here!
 
-  <script>
-    // var url = 'https://cdn.rawgit.com/andrewbiang888/bits4bites/bf3cce09/projects/projects.json';
-    var url = '/projects/projects.json';
-    var req = new XMLHttpRequest();
-    req.open('GET', url, true);
-    req.onreadystatechange = function() {
-      if (req.readyState === XMLHttpRequest.DONE && req.status === 200) {
-        var projects = JSON.parse(req.responseText);
-        init(shuffle(projects));
-      }
-    };
-    req.send();
+                console.log(projects);
 
-    function init(projects) {
-      // put all the logic that uses the projects data in here!
+                var app = new Vue({
+                    el: '#projects',
+                    data: {
+                        projects
+                    }
+                })
+              };
+          </script>
 
-      var app = new Vue({
-        el: '#projects',
-        data: {
-          projects
+                <script>
+                    // var url = 'https://cdn.rawgit.com/andrewbiang888/bits4bites/bf3cce09/projects/projects.json';
+                    var url = '/projects/projects.json';
+                var req = new XMLHttpRequest();
+                req.open('GET', url, true);
+                req.onreadystatechange = function() {
+                    if (req.readyState === XMLHttpRequest.DONE && req.status === 200) {
+                        var projects = JSON.parse(req.responseText);
+                        init(shuffle(projects));
+                    }
+                };
+                req.send();
 
-          
-        }
+                function init(projects) {
+                    // put all the logic that uses the projects data in here!
 
-        // randomize array, from http://stackoverflow.com/a/2450976
-        function shuffle(array) {
-            var currentIndex = array.length,
-                temporaryValue, randomIndex;
-
-            // While there remain elements to shuffle...
-            while (0 !== currentIndex) {
-
-                // Pick a remaining element...
-                randomIndex = Math.floor(Math.random() * currentIndex);
-                currentIndex -= 1;
-
-                // And swap it with the current element.
-                temporaryValue = array[currentIndex];
-                array[currentIndex] = array[randomIndex];
-                array[randomIndex] = temporaryValue;
-            }
-            return array;
-        }
-    </script>
+                    var app = new Vue({
+                                el: '#projects',
+                                data: {
+                                    projects
 
 
-    <script src="script.js"></script>
+                                }
+                              });
+
+                                // randomize array, from http://stackoverflow.com/a/2450976
+                                function shuffle(array) {
+                                    var currentIndex = array.length,
+                                        temporaryValue, randomIndex;
+
+                                    // While there remain elements to shuffle...
+                                    while (0 !== currentIndex) {
+
+                                        // Pick a remaining element...
+                                        randomIndex = Math.floor(Math.random() * currentIndex);
+                                        currentIndex -= 1;
+
+                                        // And swap it with the current element.
+                                        temporaryValue = array[currentIndex];
+                                        array[currentIndex] = array[randomIndex];
+                                        array[randomIndex] = temporaryValue;
+                                    }
+                                    return array;
+                                };
+                              };
+        </script>
+
+
+        <script src="script.js"></script>
 </body>
 
 </html>
