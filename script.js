@@ -46,9 +46,11 @@ $(document).ready(function() {
     draggable: true // Choose whether you can drag to open on touch screens
   });
   var options = [{
-    selector: '#staggeredChefs',
+    selector: '#staggered-test',
     offset: 300,
     callback: function(el) {
+
+// more options here: https://github.com/Dogfalo/materialize/blob/9d673705fa114842bd05cd0b879e706aa4d9e716/js/transitions.js
       Materialize.showStaggeredList($(el));
     }
   }];

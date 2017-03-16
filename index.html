@@ -63,21 +63,17 @@
             <h1>Our Chefs</h1>
         </div>
 
-        <ul id="staggeredChefs">
-          <div class="chefs" v-for="person in persons">
-            <li>
-              <div class="chef-img">
-                <img class="z-depth-2":src="person.photo">
-              </div>
-            </li>
-            <li>
-              <div class="chef-info">
-                <h4>{{person.name}}</h4>
-                <h6><em>{{person.title}}</em></h6>
-                <p>{{person.description}}</p>
-              </div>
-            </li>
-          </div>
+        <ul id="staggered-test" class="container">
+          <li class="chefs row" v-for="person in persons">
+            <div class="chef-img col s6">
+              <img class="z-depth-2" :src="person.photo">
+            </div>
+            <div class="chef-info material-box col s6">
+              <h4>{{person.name}}</h4>
+              <h6><em>{{person.title}}</em></h6>
+              <p id="chefDescription">{{person.description}}</p>
+            </div>
+          </li>
         </ul>
 
         <div id="ourProjects" class="fullWidth center is-medium">
