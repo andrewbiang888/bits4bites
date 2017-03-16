@@ -33,11 +33,12 @@ var bits4bites = new Vue({
 //       $('.carousel.carousel-slider').height('300px')
 //     });
 
-$('.carousel.carousel-slider').carousel({
-  full_width: true
-});
+
 
 $(document).ready(function() {
+  $('.carousel.carousel-slider').carousel({
+    fullWidth: true
+  });
   $(".button-collapse").sideNav({
     menuWidth: 75 + '%', // Default is 300
     edge: 'left', // Choose the horizontal origin
