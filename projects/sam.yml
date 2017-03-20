@@ -3,7 +3,20 @@ projects:
     link: https://b-side-merchandise.herokuapp.com/
     image: /projects/images/b-side-merch.png
     description: A merchandise store featuring products by B-Side Book Club A Cappella based in Portland, Oregon.
-    tech: 
+    tech:
       - PayPal integration
       - Email Injection Form Security
       - PHP Mailer
+
+  - name: WeCamp
+    link: http://we-camp.herokuapp.com/
+    image: /projects/images/we-camp.png
+    description: A web app that allows registered users to discover, post and discuss their favorite campsites.
+    tech:
+      - Google Maps API
+      - EJS
+      - Node.js
+      - Express
+      - MongoDB
+      - Passport
+      - Bootstrap
